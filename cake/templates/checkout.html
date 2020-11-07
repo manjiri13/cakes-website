@@ -1,0 +1,142 @@
+{% comment %} https://codepen.io/theresa-e/pen/BOBQxR {% endcomment %}
+<!DOCTYPE html>
+<head>
+<title>checkout</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+   
+<style>
+html{
+  background:#fadedc;
+}
+
+.nav {
+  text-align:center;
+  background:#d1cdcd;
+  overflow: hidden;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+}
+
+.nav li{
+ display:inline-block;
+ padding: 14px;
+}
+
+.nav #selected{
+  border-bottom: 1px solid black; 
+  font-weight:600;
+  font-size:18px;
+}
+body{
+  margin:auto;
+  margin-top:125px;
+}
+
+.form{
+  width:50%;
+  margin-left:auto;
+  padding-right:10%;
+}
+
+label{
+  display:block;
+  padding-bottom:5px;
+  padding-top:5px;
+}
+
+input {
+  width:100%;
+  height:30px;
+  background:transparent;
+  border:1px solid #d1cdcd;  
+  border-radius:4px;
+  padding:5px;
+  margin:5px;
+}
+
+.button {
+  width:50%;
+  margin-left:25%;
+  margin-top:25px;
+  border-radius:4px;
+ 
+}
+.button:hover{
+  background-color:#d1cdcd;
+  font-weight:600;
+  
+  
+}
+
+#left {
+  float:left;
+  width:50%;
+}
+#right {
+  float:right;
+  width:50%;
+
+}
+
+#right img{
+  height:100%;
+  width:95%;
+  margin:auto;
+  display:block;
+  padding-bottom:5%;
+}
+
+h2{
+  text-align:center;
+  
+}
+        @media only screen and (max-width: 500px) {
+        #right{
+            display:none;
+        }
+        }
+
+</style>
+</head>
+<body>
+<html>
+<head>
+  <title>Checkout </title> 
+  <div class="nav">
+    <ul>
+      <li>Cart</li>
+      <li id="selected">Check Out</li>
+      <li>Confirmation</li>
+    </ul>
+    </div>
+  </head>
+  <body>
+    <div id="container">
+    <div id="left">
+    <div class="form">
+      <form>
+        <h2>Xena's Donut Shop</h2>
+        <label> Name</label>
+        <input type="text" placeholder="First Last">
+        <label> Card Number</label>
+        <input type="text" placeholder="1234-5678-1234-5678">
+        <label> Expiration Date</label>
+        <input type="text" placeholder="MM/YY">
+        <label> Security Code</label>
+        <input type="password" placeholder="XXX" maxlength="3" >
+        <input class= "button" type="submit" value="Submit Payment">
+      </form>
+      </div>
+    </div>
+    <div id="right">
+      <img src="https://user-images.githubusercontent.com/33137254/63430620-03cce000-c3eb-11e9-8cfc-3e0c5460c186.jpg" >
+        </div>
+   <br>
+   <div>
+  </body>
+</html>
+
+</body>
+</html>

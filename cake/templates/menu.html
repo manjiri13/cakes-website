@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <style>
+  .grid {
+  width: 85%;
+  margin: 2em auto;
+  background-color: black;
+  display: grid;
+  grid-gap: 10px;
+  
+  grid-template-columns: repeat(auto-fit, minmax(160px, 2fr));
+}
+
+.grid-div {color:black;
+  border-radius:12px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid black;
+}
+body {color:white;
+            background-color: black;
+            padding: 10px;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .nav {
+            float: right;
+            
+            right: 0;
+            padding:30px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav a {
+            padding: 25px 25px;
+            text-align: center;
+            color: #f2f2f2;
+        }
+        .nav1{padding:50px 30px;
+         position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color:black;
+        }
+        .nav1 a{padding: 25px 25px;
+            text-align: center;
+            color: #f2f2f2;
+            margin-bottom:10px;
+        }
+
+        .nav1 a:hover{
+            background-color: whitesmoke; color: black; border-radius: 7px;
+        }
+        #logo1{ font-family:'Lobster', cursive; color:white;
+        font-weight: lighter; font-size:3rem; padding:10px;}
+
+
+#nav2 {
+	margin: 0 auto;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+ 
+}
+
+
+nav {
+	margin: 50px 0;
+	background-color: black;
+  
+}
+
+nav ul {
+	padding: 0;
+  margin: 0;
+	list-style: none;
+	 
+	}
+	
+nav ul li {
+	display:inline-block;
+	background-color: white;
+	}
+
+nav a {
+	display:block;
+	padding:0 10px;	
+	color:black;
+	font-size:20px;
+	line-height: 60px;
+	text-decoration:none;
+  width:200px;
+}
+
+nav a:hover { 
+	background-color: white; 
+  color:black;
+}
+
+nav ul ul {
+	display: none;
+	
+	top: 60px; 
+}
+	
+
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+nav ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px;
+}
+
+        @media only screen and (max-width: 800px){
+          .nav {
+            float: right;
+            
+            right: 0;
+            padding:5px;
+        }
+        .nav1{display:none;
+        }
+  
+        }
+@media only screen and (min-width: 800px){
+         
+        #nav2{display:none;
+        }
+
+  </style>
+</head>
+<body>
+<div class="nav">
+        <a href="../">Sign out</a>
+        <a href="../cart/">cart(0)</a>
+    
+    </div><br>
+    <h1 id="logo1">Cakery Menu</h1>
+    <div class="nav1">
+        <a href="##">ALL</a>
+        <a href="#birthday">Birthday Cakes</a>
+        <a href="#wedding">Wedding Cakes</a>
+        <a href="#chocolates">Chocolates</a>
+        <a href="#pasteries">Pasteries</a>
+    </div>
+    <div id="nav2">
+    <nav>
+        
+    <ul>
+            <li><a href="#">Filter</a>
+            <!-- First Tier Drop Down -->
+            <ul>
+                <li><a href="birthday">Birthday Cakes</a></li>
+                <li><a href="#wedding">Wedding Cakes</a></li>
+                <li><a href="#chocolates">Chocolates</a></li>
+                <li><a href="#pasteries">Pasteries</a></li>
+            </ul>        
+            </li></ul>
+  </div>
+  <h1 id="birthday">Birthday Cakes</h1>
+  <div class="grid">
+   
+    {% for i in products %}
+        <div class="grid-div">
+           
+            <div>{{i.image}}</div>
+
+                <hr>   <div class="div 1">
+      
+               <p> {{i.description}}</p><br>
+                <button type="submit" formtarget="_blank" class="btn btn-outline-secondary add-btn" >Add to Cart</button>
+                <a class="btn btn-outline-success" href="#">{{i.name}}</a>
+                <h4 style="display: inline-block; float:right;"><strong>{{i.price}}</strong></h4>
+                </div>
+        </div>
+     {% endfor %}   
+  </div>
+
+<h1 id="wedding">Wedding Cakes</h1><br>
+  <div class="grid">
+   
+    {% for i in products %}
+        
+            
+            <div class="grid-div">
+           
+            <div>{{i.image}}</div>
+
+                <hr>   <div class="div 1">
+      
+               <p> {{i.description}}</p><br>
+                <button type="submit" formtarget="_blank" class="btn btn-outline-secondary add-btn" >Add to Cart</button>
+                <a class="btn btn-outline-success" href="#">{{i.name}}</a>
+                <h4 style="display: inline-block; float:right;"><strong>{{i.price}}</strong></h4>
+                </div>
+                
+           
+        </div>
+     {% endfor %}   
+  </div>
+
+<h1 id="chocolates">Chocolates</h1><br>
+  <div class="grid">
+   
+    {% for i in products %}
+        
+            
+            <div class="grid-div">
+           
+            <div>{{i.image}}</div>
+
+                <hr>   <div class="div 1">
+      
+               <p> {{i.description}}</p><br>
+                <button type="submit" formtarget="_blank" class="btn btn-outline-secondary add-btn" >Add to Cart</button>
+                <a class="btn btn-outline-success" href="#">{{i.name}}</a>
+                <h4 style="display: inline-block; float:right;"><strong>{{i.price}}</strong></h4>
+                </div>
+                
+           
+        </div>
+     {% endfor %}   
+  </div>
+
+  <h1 id="pasteries">Pasteries</h1><br>
+  <div class="grid">
+   
+    {% for i in products %}
+        
+            
+            <div class="grid-div">
+           
+            <div>{{i.image}}</div>
+
+                <hr>   <div class="div 1">
+      
+               <p> {{i.description}}</p><br>
+                <button type="submit" formtarget="_blank" class="btn btn-outline-secondary add-btn" >Add to Cart</button>
+                <a class="btn btn-outline-success" href="#">{{i.name}}</a>
+                <h4 style="display: inline-block; float:right;"><strong>{{i.price}}</strong></h4>
+                </div>
+                
+           
+        </div>
+     {% endfor %}   
+  </div>
+</body>
+</html>
